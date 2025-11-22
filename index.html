@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boat Rush — Ultimate Edition</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="cover">
+    <div class="menu-card">
+      <h1>BOAT RUSH — ULTIMATE</h1>
+
+      <div class="row">
+        <label>Choose Ship:</label>
+        <select id="shipSelect" title="Choose Ship">
+          <option value="classic">Classic</option>
+          <option value="speed">Speedster</option>
+          <option value="tank">Tank</option>
+          <option value="skimmer">Skimmer</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Mode:</label>
+        <select id="modeSelect" title="Choose Mode">
+          <option value="endless">Endless</option>
+          <option value="hard">Hard</option>
+          <option value="boss">Boss Rush</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Controls (2 players):</label>
+        <div class="small">P1: A/D (move) W (boost) S (shoot) • P2: ←/→ (move) ↑ (boost) ↓ (shoot)</div>
+      </div>
+
+      <div class="row center">
+        <button id="startBtn">START GAME</button>
+        <button id="showLeaderboard">LEADERBOARD</button>
+      </div>
+
+      <div id="leaderboard" class="hidden"></div>
+
+      <div class="row small muted">Tip: Use boost carefully — boost has cooldown. Collect powerups to survive!</div>
+    </div>
+  </div>
+
+  <div id="ui">
+    <div class="hud-left">
+      <div>P1 <span id="p1hp">HP:100</span> <span id="p1lives">L:3</span></div>
+      <div>Boost: <span id="p1boost">0</span></div>
+    </div>
+    <div class="hud-right">
+      <div>P2 <span id="p2hp">HP:100</span> <span id="p2lives">L:3</span></div>
+      <div>Boost: <span id="p2boost">0</span></div>
+    </div>
+    <div class="top-center">
+      <div id="gameStateText"></div>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Audio sources (public domain / free samples) -->
+  <audio id="bgm" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_655c9658ca.mp3?filename=future-technology-112189.mp3" loop></audio>
+  <audio id="sfxPickup" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7d3e02aa87.mp3?filename=game-bonus-144751.mp3"></audio>
+  <audio id="sfxHit" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_4e0fb89cb1.mp3?filename=hit-2-102441.mp3"></audio>
+  <audio id="sfxShoot" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8b14c2d4e8.mp3?filename=laser-1-110814.mp3"></audio>
+  <audio id="sfxBoss" src="https://cdn.pixabay.com/download/audio/2021/09/11/audio_53862b6e0a.mp3?filename=dramatic-112312.mp3"></audio>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
